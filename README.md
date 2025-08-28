@@ -46,8 +46,20 @@ Proyecto de **visión por computadora + Arduino** que, con una **cámara web**, 
 ser = serial.Serial('COM6', 9600)
 ```
 ##EJECUCION
+```
 python semaforo_invidentes.py
+```
+
+🔌 Protocolo Serial (Python → Arduino)
+| Estado   | Acción mostrada en pantalla | Byte enviado | Uso sugerido en Arduino  |
+| -------- | --------------------------- | ------------ | ------------------------ |
+| Rojo     | “Puedes PASAR”              | `35`         | Vibración/volumen medio  |
+| Verde    | “No puedes PASAR”           | `100`        | Vibración/volumen fuerte |
+| Amarillo | “Espera”                    | `0`          | Silencio (sin vibración) |
+| Timeout  | —                           | `0`          | Silencio                 |
+
 ##Ejemplo de lectura en Arduino (orientativo)
+```
 // Lee valores "0", "35" o "100" enviados como texto y ajusta salida PWM.
 void setup() {
   Serial.begin(9600);
@@ -63,24 +75,26 @@ void loop() {
     analogWrite(9, pwm);
   }
 }
+```
 ##Parámetros ajustables (en el código)
-
+```
 ##Rangos HSV:
 
 verde_bajo = np.array([40, 50, 50]);  verde_alto   = np.array([90, 255, 255])
 amarillo_bajo = np.array([20, 100, 100]); amarillo_alto = np.array([40, 255, 255])
 rojo_bajo = np.array([0, 150, 150]);  rojo_alto   = np.array([10, 255, 255])
+```
 Ajusta según iluminación/cámara.
 
 ##Detección de círculos:
-
+```
 min_radius = 20
 max_radius = 60
 
 circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, 1, 20,
                            param1=50, param2=40,
                            minRadius=min_radius, maxRadius=max_radius)
-
+```
 
 Baja param2 para más sensibilidad (más falsos positivos), súbelo para menos.
 
