@@ -1,3 +1,4 @@
+
 # 🚦 Sistema de Detección de Semáforos para Personas con Discapacidad Visual
 
 Proyecto de **visión por computadora + Arduino** que, con una **cámara web**, detecta el color del semáforo (rojo/amarillo/verde) y envía una señal por **serial** para accionar un **vibrador** (o buzzer) que guíe al usuario.
@@ -8,6 +9,10 @@ Proyecto de **visión por computadora + Arduino** que, con una **cámara web**, 
 > - **Amarillo** → “Espera” → envía `0`  
 > Ajusta estos comportamientos si quieres alinear con otras reglas.
 
+---
+--- 
+## Imagen referencial
+<img width="886" height="498" alt="image" src="https://github.com/user-attachments/assets/55a9f20a-b6f6-41eb-86d9-f2c177c6bcc2" />
 ---
 
 ## ✨ Características
