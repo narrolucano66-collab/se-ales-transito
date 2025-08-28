@@ -33,13 +33,18 @@ Proyecto de **visión por computadora + Arduino** que, con una **cámara web**, 
   ```bash
   pip install opencv-python numpy pyserial
 ## ESTRUCTURA DEL CODIGO
-Proyecto-Semaforo-Invidentes/
-├── semaforo_invidentes.py   # Código principal (este repo)
-└── README.md                # Este documento
+```bash
+  Proyecto-Semaforo-Invidentes/
+    ├── semaforo_invidentes.py   # Código principal (este repo)
+    └── README.md                # Este documento
+```
+
 ##CONFIGURACION DE PUERTO
-#Conecta el Arduino por USB.
-#En el código, ajusta el puerto:
+1.Conecta el Arduino por USB.
+2.En el código, ajusta el puerto:
+```python
 ser = serial.Serial('COM6', 9600)
+```
 ##EJECUCION
 python semaforo_invidentes.py
 ##Ejemplo de lectura en Arduino (orientativo)
