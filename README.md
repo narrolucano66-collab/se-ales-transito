@@ -39,13 +39,13 @@ Proyecto de **visión por computadora + Arduino** que, con una **cámara web**, 
     └── README.md                # Este documento
 ```
 
-##CONFIGURACION DE PUERTO
+## CONFIGURACION DE PUERTO
 1.Conecta el Arduino por USB.
 2.En el código, ajusta el puerto:
 ```python
 ser = serial.Serial('COM6', 9600)
 ```
-##EJECUCION
+## EJECUCION
 ```
 python semaforo_invidentes.py
 ```
