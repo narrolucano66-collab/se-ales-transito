@@ -50,7 +50,7 @@ ser = serial.Serial('COM6', 9600)
 python semaforo_invidentes.py
 ```
 
-🔌 Protocolo Serial (Python → Arduino)
+## 🔌 Protocolo Serial (Python → Arduino)
 | Estado   | Acción mostrada en pantalla | Byte enviado | Uso sugerido en Arduino  |
 | -------- | --------------------------- | ------------ | ------------------------ |
 | Rojo     | “Puedes PASAR”              | `35`         | Vibración/volumen medio  |
@@ -58,7 +58,7 @@ python semaforo_invidentes.py
 | Amarillo | “Espera”                    | `0`          | Silencio (sin vibración) |
 | Timeout  | —                           | `0`          | Silencio                 |
 
-##Ejemplo de lectura en Arduino (orientativo)
+## Ejemplo de lectura en Arduino (orientativo)
 ```
 // Lee valores "0", "35" o "100" enviados como texto y ajusta salida PWM.
 void setup() {
@@ -76,7 +76,7 @@ void loop() {
   }
 }
 ```
-##Parámetros ajustables (en el código)
+## Parámetros ajustables (en el código)
 ```
 ##Rangos HSV:
 
@@ -86,7 +86,7 @@ rojo_bajo = np.array([0, 150, 150]);  rojo_alto   = np.array([10, 255, 255])
 ```
 Ajusta según iluminación/cámara.
 
-##Detección de círculos:
+## Detección de círculos:
 ```
 min_radius = 20
 max_radius = 60
@@ -98,11 +98,11 @@ circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, 1, 20,
 
 Baja param2 para más sensibilidad (más falsos positivos), súbelo para menos.
 
-##Temporizador de silencio:
+## Temporizador de silencio:
 
 tiempo_maximo = 5  # segundos
 
-🧪 Consejos de calibración
+## 🧪 Consejos de calibración
 
 Comienza con buena iluminación y coloca la cámara enfocando el semáforo a media distancia.
 
@@ -110,7 +110,7 @@ Ajusta primero rangos HSV (observa la máscara con cv2.inRange si haces depuraci
 
 Luego ajusta HoughCircles para que encuentre un solo círculo por luz.
 
-🧯 Solución de problemas
+## 🧯 Solución de problemas
 
 No abre la cámara: prueba VideoCapture(1), revisa permisos.
 
